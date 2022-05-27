@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+  <title>World energy consumption</title>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <!-- http://www.d3noob.org/2014/04/using-html-inputs-with-d3js.html-->
+
+  <style>
+    /*https://www.cssportal.com/style-input-range/ */
+    input[type=range] {
+      height: 38px;
+      -webkit-appearance: none;
+      margin: 10px 0;
+      width: 100%;
+    }
+
+    input[type=range]:focus {
+      outline: none;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 10px;
+      cursor: pointer;
+      animate: 0.2s;
+      box-shadow: 1px 1px 1px #000000;
+      background: gray;
+      border-radius: 5px;
+      border: 1px solid #000000;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      box-shadow: 1px 1px 1px #000000;
+      border: 1px solid #000000;
+      height: 30px;
+      width: 15px;
+      border-radius: 5px;
+      background: #FFFFFF;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -11px;
+    }
+
+    input[type=range]:focus::-webkit-slider-runnable-track {
+      background: gray;
+    }
+
+    input[type=range]::-moz-range-track {
+      width: 100%;
+      height: 10px;
+      cursor: pointer;
+      animate: 0.2s;
+      box-shadow: 1px 1px 1px #000000;
+      background: gray;
+      border-radius: 5px;
+      border: 1px solid #000000;
+    }
+
+    input[type=range]::-moz-range-thumb {
+      box-shadow: 1px 1px 1px #000000;
+      border: 1px solid #000000;
+      height: 30px;
+      width: 15px;
+      border-radius: 5px;
+      background: #FFFFFF;
+      cursor: pointer;
+    }
+
+    input[type=range]::-ms-track {
+      width: 100%;
+      height: 10px;
+      cursor: pointer;
+      animate: 0.2s;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+    input[type=range]::-ms-fill-lower {
+      background: gray;
+      border: 1px solid #000000;
+      border-radius: 10px;
+      box-shadow: 1px 1px 1px #000000;
+    }
+
+    input[type=range]::-ms-fill-upper {
+      background: gray;
+      border: 1px solid #000000;
+      border-radius: 10px;
+      box-shadow: 1px 1px 1px #000000;
+    }
+
+    input[type=range]::-ms-thumb {
+      margin-top: 1px;
+      box-shadow: 1px 1px 1px #000000;
+      border: 1px solid #000000;
+      height: 30px;
+      width: 15px;
+      border-radius: 5px;
+      background: #FFFFFF;
+      cursor: pointer;
+    }
+
+    input[type=range]:focus::-ms-fill-lower {
+      background: gray;
+    }
+
+    input[type=range]:focus::-ms-fill-upper {
+      background: gray;
+    }
+
+
+  </style>
+
+</head>
+
+<body>
+  <h1 style="text-align:center">World energy consumption</h1>
+  <button id="button">PLAY</button>
+
+  <p>
+    <span style="font-size:22px;vertical-align: middle;line-height:100px;margin-right: 5px;"><b>1965</b></span>
+    <!-- http://www.d3noob.org/2014/04/using-html-inputs-with-d3js.html-->
+    <input type="range" min="1965" max="2019" id="nYear" style="width: 92%;vertical-align: middle;line-height:100px;" />
+    <span style="font-size:22px;vertical-align: middle;line-height:100px;margin-left: 5px;"><b>2019</b></span>
+  </p>
+
+  <p>
+  <div style="width:8%;height:15px;background-color: darkblue;opacity: 0.15;display: inline-block;border-radius: 10px;">
+  </div>
+  <div style="width:8%;height:15px;background-color: darkred;opacity: 0.1;display: inline-block;border-radius: 10px;">
+  </div>
+  <div style="width:8%;height:15px;background-color: darkred;opacity: 0.2;display: inline-block;border-radius: 10px;">
+  </div>
+  <div style="width:8%;height:15px;background-color: darkred;opacity: 0.3;display: inline-block;border-radius: 10px;">
+  </div>
+  <div style="width:8%;height:15px;background-color: darkred;opacity: 0.4;display: inline-block;border-radius: 10px;">
+  </div>
+  <div style="width:8%;height:15px;background-color: darkred;opacity: 0.5;display: inline-block;border-radius: 10px;">
+  </div>
+  <div style="width:8%;height:15px;background-color: darkred;opacity: 0.6;display: inline-block;border-radius: 10px;">
+  </div>
+  <div style="width:8%;height:15px;background-color: darkred;opacity: 0.7;display: inline-block;border-radius: 10px;">
+  </div>
+  <div style="width:8%;height:15px;background-color: darkred;opacity: 0.8;display: inline-block;border-radius: 10px;">
+  </div>
+  <div style="width:8%;height:15px;background-color: darkred;opacity: 0.9;display: inline-block;border-radius: 10px;">
+  </div>
+  <div style="width:8%;height:15px;background-color: darkred;opacity: 1.0;display: inline-block;border-radius: 10px;">
+  </div>
+  </p>
+  <p>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">No available data</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">&lt;1500000 TWHR</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">3000000 TWHR</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">4500000 TWHR</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">6000000 TWHR</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">7500000 TWHR</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">9000000 TWHR</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">10500000 TWHR</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">12000000 TWHR</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">13500000 TWHR</div>
+  <div style="width:9%;height:15px;display: inline-block;text-align: center;">&gt;15000000 TWHR</div>
+  </p>
+
+  <p>
+  <div style="display: inline-block">
+    <label for="nYear" style="display: inline-block; width: 240px; text-align: left">
+      <span id="nYear-value" style="font-size:60px;font-weight:bold;">…</span>
+    </label>
+  </div>
+  <div id="country" style="text-align: center;display: inline-block">...</div>
+  </p>
+
+  <script>
+
+    var width = 1200;
+    var height = 700;
+
+    var year=1965;
+    var flag="not running";
+
+    var projection = d3.geo.mercator()
+
+    var path = d3.geo.path()
+      .projection(projection.center([0, height + 80]));
+
+    var svg = d3.select("body")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height);
+
+    var button = d3.select("#button")
+      .on("click", function () {
+        if(flag=="not running"){
+          flag="running";
+          d3.select("#button")
+            .text("STOP");
+          mapPrinter();
+        }
+        else if(flag=="running"){
+          flag="not running";
+          d3.select("#button")
+            .text("PLAY");
+        }
+
+      });
+
+    //https://linuxhint.com/delay-javascript-code-execution/
+
+    function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    async function mapPrinter() {
+      for (year; year < 2020; year++) {
+        update(year);
+        await delay(300);
+        if(flag=="not running"){
+          return;
+        }
+      }
+      year=1965;
+      flag="not running"
+    }
+
+
+    function generateMap(year) {
+      //https://github.com/topojson/world-atlas
+      d3.json("combinedJson.json", function (world) {
+        d3.selectAll("svg > *").remove()
+
+        var statesData = topojson.feature(world, world.objects.countries);
+        var consumption = world.consumption;
+
+        var states = svg.selectAll('path.country')
+          .data(statesData.features)
+          .enter()
+          .append('path')
+          .classed("state", true)
+          .attr("d", path)
+          .style("fill", "darkred")
+          .style("stroke", "white")
+          .style("stroke-width", 1)
+          .style("fill-opacity", 0.05)
+          .call(d3.behavior.zoom().on("zoom", function () {
+            svg.attr("transform", "translate(" +
+              d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
+          }))
+          .on("mouseover", function (d, i) {
+
+            for (var j = 0; j < 17240; j++) {
+              if (d.properties.name == consumption[j].country && consumption[j].year == year) {
+                d3.select("#country").text(d.properties.name + "    " + consumption[j].primary_energy_consumption.replaceAll('.', ''));
+                //return;
+              }
+
+            }
+
+          })
+          .on("mouseout", function () {
+            d3.select("#country").text("...");
+          });
+
+        states.each(function (d, i) {
+          for (var j = 0; j < 17240; j++) {
+            if (d.properties.name == consumption[j].country && consumption[j].year == year) {
+              if (consumption[j].primary_energy_consumption == "") {
+                d3.select(this)
+                  .style("fill", "darkblue")
+                  .style("fill-opacity", 0.15);
+              } else {
+                d3.select(this)
+                  .style("fill-opacity", function (d) {
+                    var cons = consumption[j].primary_energy_consumption;
+                    if ((cons.replaceAll('.', '') / 15000000) > 0.05) {
+                      return (cons.replaceAll('.', '') / 15000000);
+                    }
+                    else { return 0.05; }
+                  });
+              }
+            }
+          }
+        }
+        )
+
+      });
+    }
+
+    d3.select("#nYear").on("input", function () {
+      update(this.value);
+      year=this.value;
+    });
+
+    update(2019);
+
+    function update(nYear) {
+      // adjust the text on the range slider
+      d3.select("#nYear-value").text(nYear);
+      d3.select("#nYear").property("value", nYear);
+      generateMap(nYear);
+
+    }
+
+  </script>
+</body>
