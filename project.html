@@ -111,14 +111,18 @@
       background: gray;
     }
 
-
+    .map_area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 
 </head>
 
 <body>
   <h1 style="text-align:center">World energy consumption</h1>
-  <button id="button">PLAY</button>
+  <button id="button" style="margin-left: 20px;">PLAY</button>
 
   <p>
     <span style="font-size:22px;vertical-align: middle;line-height:100px;margin-right: 5px;"><b>1965</b></span>
@@ -153,55 +157,60 @@
   </p>
   <p>
   <div style="width:8%;height:15px;display: inline-block;text-align: center;">No available data</div>
-  <div style="width:8%;height:15px;display: inline-block;text-align: center;">&lt;1500000 TWHR</div>
-  <div style="width:8%;height:15px;display: inline-block;text-align: center;">3000000 TWHR</div>
-  <div style="width:8%;height:15px;display: inline-block;text-align: center;">4500000 TWHR</div>
-  <div style="width:8%;height:15px;display: inline-block;text-align: center;">6000000 TWHR</div>
-  <div style="width:8%;height:15px;display: inline-block;text-align: center;">7500000 TWHR</div>
-  <div style="width:8%;height:15px;display: inline-block;text-align: center;">9000000 TWHR</div>
-  <div style="width:8%;height:15px;display: inline-block;text-align: center;">10500000 TWHR</div>
-  <div style="width:8%;height:15px;display: inline-block;text-align: center;">12000000 TWHR</div>
-  <div style="width:8%;height:15px;display: inline-block;text-align: center;">13500000 TWHR</div>
-  <div style="width:9%;height:15px;display: inline-block;text-align: center;">&gt;15000000 TWHR</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">&lt;1.500.000 TWh</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">3.000.000 TWh</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">4.500.000 TWh</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">6.000.000 TWh</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">7.500.000 TWh</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">9.000.000 TWh</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">10.500.000 TWh</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">12.000.000 TWh</div>
+  <div style="width:8%;height:15px;display: inline-block;text-align: center;">13.500.000 TWh</div>
+  <div style="width:9%;height:15px;display: inline-block;text-align: center;">&gt;15.000.000 TWh</div>
   </p>
 
-  <p>
-  <div style="display: inline-block">
-    <label for="nYear" style="display: inline-block; width: 240px; text-align: left">
+
+  <div class="map_area" style="text-align: center;">
+
+    <label for="nYear" style="display: inline-block; width: 200px; text-align:left;padding: 20px;">
       <span id="nYear-value" style="font-size:60px;font-weight:bold;">…</span>
     </label>
+
+    <p id="map_center" style="text-align: center;display: inline-block;"></p>
+
+    <div id="country" style="text-align: left;display: inline-block;width: 200px;padding: 20px;"></div>
+
   </div>
-  <div id="country" style="text-align: center;display: inline-block">...</div>
-  </p>
 
   <script>
 
-    var width = 1200;
+    var width = 1100;
     var height = 700;
 
-    var year=1965;
-    var flag="not running";
+    var year = 1965;
+    var flag = "not running";
+    var states;
 
     var projection = d3.geo.mercator()
 
     var path = d3.geo.path()
       .projection(projection.center([0, height + 80]));
 
-    var svg = d3.select("body")
+    var svg = d3.select("#map_center")
       .append("svg")
       .attr("width", width)
       .attr("height", height);
 
     var button = d3.select("#button")
       .on("click", function () {
-        if(flag=="not running"){
-          flag="running";
+        if (flag == "not running") {
+          flag = "running";
           d3.select("#button")
             .text("STOP");
           mapPrinter();
         }
-        else if(flag=="running"){
-          flag="not running";
+        else if (flag == "running") {
+          flag = "not running";
           d3.select("#button")
             .text("PLAY");
         }
@@ -216,25 +225,27 @@
     async function mapPrinter() {
       for (year; year < 2020; year++) {
         update(year);
-        await delay(300);
-        if(flag=="not running"){
+        await delay(1000);
+        if (flag == "not running") {
           return;
         }
       }
-      year=1965;
-      flag="not running"
+      year = 1965;
+      flag = "not running"
+      d3.select("#button")
+        .text("PLAY");
     }
 
 
     function generateMap(year) {
       //https://github.com/topojson/world-atlas
       d3.json("combinedJson.json", function (world) {
-        d3.selectAll("svg > *").remove()
+        //d3.selectAll("svg > *").remove()
 
         var statesData = topojson.feature(world, world.objects.countries);
         var consumption = world.consumption;
 
-        var states = svg.selectAll('path.country')
+        states = svg.selectAll('path.country')
           .data(statesData.features)
           .enter()
           .append('path')
@@ -244,23 +255,24 @@
           .style("stroke", "white")
           .style("stroke-width", 1)
           .style("fill-opacity", 0.05)
-          .call(d3.behavior.zoom().on("zoom", function () {
-            svg.attr("transform", "translate(" +
-              d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
-          }))
           .on("mouseover", function (d, i) {
 
             for (var j = 0; j < 17240; j++) {
               if (d.properties.name == consumption[j].country && consumption[j].year == year) {
-                d3.select("#country").text(d.properties.name + "    " + consumption[j].primary_energy_consumption.replaceAll('.', ''));
-                //return;
+                if (consumption[j].primary_energy_consumption != "") {
+                  d3.select("#country")
+                    .text("In " + year + " consumption of " + d.properties.name + " was " + consumption[j].primary_energy_consumption + " terawatt hours.");
+                }
+                else {
+                  d3.select("#country").text("In " + year + " consumption for " + d.properties.name + " is not available.");
+                }
               }
 
             }
 
           })
           .on("mouseout", function () {
-            d3.select("#country").text("...");
+            d3.select("#country").text(" ");
           });
 
         states.each(function (d, i) {
@@ -268,10 +280,15 @@
             if (d.properties.name == consumption[j].country && consumption[j].year == year) {
               if (consumption[j].primary_energy_consumption == "") {
                 d3.select(this)
+                  .transition()
+                  .duration(3000)
                   .style("fill", "darkblue")
                   .style("fill-opacity", 0.15);
               } else {
                 d3.select(this)
+                  .transition()
+                  .duration(3000)
+                  .style("fill", "darkred")
                   .style("fill-opacity", function (d) {
                     var cons = consumption[j].primary_energy_consumption;
                     if ((cons.replaceAll('.', '') / 15000000) > 0.05) {
@@ -288,19 +305,81 @@
       });
     }
 
+
+
+    function updateMap(year) {
+
+      d3.json("combinedJson.json", function (world) {
+        var statesData = topojson.feature(world, world.objects.countries);
+        var consumption = world.consumption;
+
+        states
+          .on("mouseover", function (d, i) {
+            for (var j = 0; j < 17240; j++) {
+              if (d.properties.name == consumption[j].country && consumption[j].year == year) {
+                if (consumption[j].primary_energy_consumption != "") {
+                  d3.select("#country")
+                    .text("In " + year + " consumption of " + d.properties.name + " was " + consumption[j].primary_energy_consumption + " terawatt hours.");
+                }
+                else {
+                  d3.select("#country")
+                    .text("In " + year + " consumption for " + d.properties.name + " is not available.")
+                }
+              }
+
+            }
+
+          })
+          .on("mouseout", function () {
+            d3.select("#country").text(" ");
+          });
+
+        states.each(function (d, i) {
+          for (var j = 0; j < 17240; j++) {
+            if (d.properties.name == consumption[j].country && consumption[j].year == year) {
+              if (consumption[j].primary_energy_consumption == "") {
+                d3.select(this)
+                  .transition()
+                  .duration(900)
+                  .style("fill", "darkblue")
+                  .style("fill-opacity", 0.15);
+              } else {
+                d3.select(this)
+                  .transition()
+                  .duration(900)
+                  .style("fill", "darkred")
+                  .style("fill-opacity", function (d) {
+                    var cons = consumption[j].primary_energy_consumption;
+                    if ((cons.replaceAll('.', '') / 15000000) > 0.05) {
+                      return (cons.replaceAll('.', '') / 15000000);
+                    }
+                    else { return 0.05; }
+                  });
+              }
+            }
+          }
+        }
+        )
+
+      });
+    }
+
+
+
     d3.select("#nYear").on("input", function () {
       update(this.value);
-      year=this.value;
+      year = this.value;
     });
 
-    update(2019);
+    generateMap(year);
+    update(year);
 
     function update(nYear) {
       // adjust the text on the range slider
       d3.select("#nYear-value").text(nYear);
       d3.select("#nYear").property("value", nYear);
-      generateMap(nYear);
-
+      //generateMap(nYear);
+      updateMap(nYear);
     }
 
   </script>
