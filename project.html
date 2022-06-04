@@ -5,7 +5,6 @@
   <title>World energy consumption</title>
   <script src="https://d3js.org/d3.v3.min.js"></script>
   <script src="http://d3js.org/topojson.v1.min.js"></script>
-  <!-- http://www.d3noob.org/2014/04/using-html-inputs-with-d3js.html-->
 
   <style>
     /*https://www.cssportal.com/style-input-range/ */
@@ -155,6 +154,7 @@
   <div style="width:8%;height:15px;background-color: darkred;opacity: 1.0;display: inline-block;border-radius: 10px;">
   </div>
   </p>
+
   <p>
   <div style="width:8%;height:15px;display: inline-block;text-align: center;">No available data</div>
   <div style="width:8%;height:15px;display: inline-block;text-align: center;">&lt;1.500.000 TWh</div>
@@ -235,12 +235,26 @@
       d3.select("#button")
         .text("PLAY");
     }
+    
+    //http://www.d3noob.org/2014/04/using-html-inputs-with-d3js.html
+    d3.select("#nYear").on("input", function () {
+      update(this.value);
+      year = this.value;
+    });
+
+    function update(nYear) {
+      d3.select("#nYear-value").text(nYear);
+      d3.select("#nYear").property("value", nYear);
+      updateMap(nYear);
+    }
+
+
+
 
 
     function generateMap(year) {
       //https://github.com/topojson/world-atlas
       d3.json("combinedJson.json", function (world) {
-        //d3.selectAll("svg > *").remove()
 
         var statesData = topojson.feature(world, world.objects.countries);
         var consumption = world.consumption;
@@ -307,6 +321,8 @@
 
 
 
+
+
     function updateMap(year) {
 
       d3.json("combinedJson.json", function (world) {
@@ -366,21 +382,10 @@
 
 
 
-    d3.select("#nYear").on("input", function () {
-      update(this.value);
-      year = this.value;
-    });
-
     generateMap(year);
     update(year);
 
-    function update(nYear) {
-      // adjust the text on the range slider
-      d3.select("#nYear-value").text(nYear);
-      d3.select("#nYear").property("value", nYear);
-      //generateMap(nYear);
-      updateMap(nYear);
-    }
+
 
   </script>
 </body>
