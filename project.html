@@ -235,7 +235,7 @@
       d3.select("#button")
         .text("PLAY");
     }
-    
+
     //http://www.d3noob.org/2014/04/using-html-inputs-with-d3js.html
     d3.select("#nYear").on("input", function () {
       update(this.value);
@@ -323,7 +323,7 @@
 
 
 
-    function updateMap(year) {
+    function updateMap(new_year) {
 
       d3.json("combinedJson.json", function (world) {
         var statesData = topojson.feature(world, world.objects.countries);
@@ -332,14 +332,14 @@
         states
           .on("mouseover", function (d, i) {
             for (var j = 0; j < 17240; j++) {
-              if (d.properties.name == consumption[j].country && consumption[j].year == year) {
+              if (d.properties.name == consumption[j].country && consumption[j].year == new_year) {
                 if (consumption[j].primary_energy_consumption != "") {
                   d3.select("#country")
-                    .text("In " + year + " consumption of " + d.properties.name + " was " + consumption[j].primary_energy_consumption + " terawatt hours.");
+                    .text("In " + new_year + " consumption of " + d.properties.name + " was " + consumption[j].primary_energy_consumption + " terawatt hours.");
                 }
                 else {
                   d3.select("#country")
-                    .text("In " + year + " consumption for " + d.properties.name + " is not available.")
+                    .text("In " + new_year + " consumption for " + d.properties.name + " is not available.")
                 }
               }
 
@@ -352,7 +352,7 @@
 
         states.each(function (d, i) {
           for (var j = 0; j < 17240; j++) {
-            if (d.properties.name == consumption[j].country && consumption[j].year == year) {
+            if (d.properties.name == consumption[j].country && consumption[j].year == new_year) {
               if (consumption[j].primary_energy_consumption == "") {
                 d3.select(this)
                   .transition()
@@ -377,7 +377,12 @@
         }
         )
 
+        
+        if (new_year == 2019 && flag == "not running") {
+          year = 1965;
+        }
       });
+
     }
 
 
