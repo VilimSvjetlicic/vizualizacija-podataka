@@ -51412,7 +51412,7 @@
 			"iso_code": "BRA",
 			"country": "Brazil",
 			"year": 1975,
-			"primary_energy_consumption": "763.68"
+			"primary_energy_consumption": "763.680"
 		},
 		{
 			"iso_code": "BRA",
@@ -51520,13 +51520,13 @@
 			"iso_code": "BRA",
 			"country": "Brazil",
 			"year": 1993,
-			"primary_energy_consumption": "1690.6"
+			"primary_energy_consumption": "1.690.600"
 		},
 		{
 			"iso_code": "BRA",
 			"country": "Brazil",
 			"year": 1994,
-			"primary_energy_consumption": "1776.66"
+			"primary_energy_consumption": "1.776.660"
 		},
 		{
 			"iso_code": "BRA",
@@ -51586,7 +51586,7 @@
 			"iso_code": "BRA",
 			"country": "Brazil",
 			"year": 2004,
-			"primary_energy_consumption": "2392.88"
+			"primary_energy_consumption": "2.392.880"
 		},
 		{
 			"iso_code": "BRA",
@@ -51610,7 +51610,7 @@
 			"iso_code": "BRA",
 			"country": "Brazil",
 			"year": 2008,
-			"primary_energy_consumption": "2794.34"
+			"primary_energy_consumption": "2.794.340"
 		},
 		{
 			"iso_code": "BRA",
@@ -56140,7 +56140,7 @@
 			"iso_code": "CAN",
 			"country": "Canada",
 			"year": 1986,
-			"primary_energy_consumption": "2762.85"
+			"primary_energy_consumption": "2.762.850"
 		},
 		{
 			"iso_code": "CAN",
@@ -56164,7 +56164,7 @@
 			"iso_code": "CAN",
 			"country": "Canada",
 			"year": 1990,
-			"primary_energy_consumption": "2949.8"
+			"primary_energy_consumption": "2.949.800"
 		},
 		{
 			"iso_code": "CAN",
@@ -56206,7 +56206,7 @@
 			"iso_code": "CAN",
 			"country": "Canada",
 			"year": 1997,
-			"primary_energy_consumption": "3397.19"
+			"primary_energy_consumption": "3.397.190"
 		},
 		{
 			"iso_code": "CAN",
@@ -56230,7 +56230,7 @@
 			"iso_code": "CAN",
 			"country": "Canada",
 			"year": 2001,
-			"primary_energy_consumption": "3471.46"
+			"primary_energy_consumption": "3.471.460"
 		},
 		{
 			"iso_code": "CAN",
@@ -56284,13 +56284,13 @@
 			"iso_code": "CAN",
 			"country": "Canada",
 			"year": 2010,
-			"primary_energy_consumption": "3612.92"
+			"primary_energy_consumption": "3.612.920"
 		},
 		{
 			"iso_code": "CAN",
 			"country": "Canada",
 			"year": 2011,
-			"primary_energy_consumption": "3779.21"
+			"primary_energy_consumption": "3.779.219"
 		},
 		{
 			"iso_code": "CAN",
@@ -58744,7 +58744,7 @@
 			"iso_code": "CHN",
 			"country": "China",
 			"year": 1966,
-			"primary_energy_consumption": "1665.28"
+			"primary_energy_consumption": "1.665.280"
 		},
 		{
 			"iso_code": "CHN",
@@ -58804,7 +58804,7 @@
 			"iso_code": "CHN",
 			"country": "China",
 			"year": 1976,
-			"primary_energy_consumption": "3866.91"
+			"primary_energy_consumption": "3.866.910"
 		},
 		{
 			"iso_code": "CHN",
@@ -58816,7 +58816,7 @@
 			"iso_code": "CHN",
 			"country": "China",
 			"year": 1978,
-			"primary_energy_consumption": "4624.29"
+			"primary_energy_consumption": "4.624.290"
 		},
 		{
 			"iso_code": "CHN",
@@ -72556,7 +72556,7 @@
 			"iso_code": "FRA",
 			"country": "France",
 			"year": 1988,
-			"primary_energy_consumption": "2516.27"
+			"primary_energy_consumption": "2.516.270"
 		},
 		{
 			"iso_code": "FRA",
@@ -72640,7 +72640,7 @@
 			"iso_code": "FRA",
 			"country": "France",
 			"year": 2002,
-			"primary_energy_consumption": "3075.07"
+			"primary_energy_consumption": "3.075.070"
 		},
 		{
 			"iso_code": "FRA",
@@ -72718,7 +72718,7 @@
 			"iso_code": "FRA",
 			"country": "France",
 			"year": 2015,
-			"primary_energy_consumption": "2756.51"
+			"primary_energy_consumption": "2.756.510"
 		},
 		{
 			"iso_code": "FRA",
@@ -74806,7 +74806,7 @@
 			"iso_code": "DEU",
 			"country": "Germany",
 			"year": 1974,
-			"primary_energy_consumption": "3913.56"
+			"primary_energy_consumption": "3.913.560"
 		},
 		{
 			"iso_code": "DEU",
@@ -74860,19 +74860,19 @@
 			"iso_code": "DEU",
 			"country": "Germany",
 			"year": 1983,
-			"primary_energy_consumption": "4009.86"
+			"primary_energy_consumption": "4.009.860"
 		},
 		{
 			"iso_code": "DEU",
 			"country": "Germany",
 			"year": 1984,
-			"primary_energy_consumption": "4156.77"
+			"primary_energy_consumption": "4.156.770"
 		},
 		{
 			"iso_code": "DEU",
 			"country": "Germany",
 			"year": 1985,
-			"primary_energy_consumption": "4278.25"
+			"primary_energy_consumption": "4.278.250"
 		},
 		{
 			"iso_code": "DEU",
@@ -74884,7 +74884,7 @@
 			"iso_code": "DEU",
 			"country": "Germany",
 			"year": 1987,
-			"primary_energy_consumption": "4278.47"
+			"primary_energy_consumption": "4.278.470"
 		},
 		{
 			"iso_code": "DEU",
@@ -74992,7 +74992,7 @@
 			"iso_code": "DEU",
 			"country": "Germany",
 			"year": 2005,
-			"primary_energy_consumption": "3934.98"
+			"primary_energy_consumption": "3.934.980"
 		},
 		{
 			"iso_code": "DEU",
@@ -75028,7 +75028,7 @@
 			"iso_code": "DEU",
 			"country": "Germany",
 			"year": 2011,
-			"primary_energy_consumption": "3667.27"
+			"primary_energy_consumption": "3.667.270"
 		},
 		{
 			"iso_code": "DEU",
@@ -81922,7 +81922,7 @@
 			"iso_code": "IND",
 			"country": "India",
 			"year": 1967,
-			"primary_energy_consumption": "654.42"
+			"primary_energy_consumption": "654.420"
 		},
 		{
 			"iso_code": "IND",
@@ -81934,7 +81934,7 @@
 			"iso_code": "IND",
 			"country": "India",
 			"year": 1969,
-			"primary_energy_consumption": "775.25"
+			"primary_energy_consumption": "775.250"
 		},
 		{
 			"iso_code": "IND",
@@ -82006,7 +82006,7 @@
 			"iso_code": "IND",
 			"country": "India",
 			"year": 1981,
-			"primary_energy_consumption": "1338.55"
+			"primary_energy_consumption": "1.338.550"
 		},
 		{
 			"iso_code": "IND",
@@ -82060,7 +82060,7 @@
 			"iso_code": "IND",
 			"country": "India",
 			"year": 1990,
-			"primary_energy_consumption": "2287.88"
+			"primary_energy_consumption": "2.287.880"
 		},
 		{
 			"iso_code": "IND",
@@ -82096,7 +82096,7 @@
 			"iso_code": "IND",
 			"country": "India",
 			"year": 1996,
-			"primary_energy_consumption": "3064.73"
+			"primary_energy_consumption": "3.064.730"
 		},
 		{
 			"iso_code": "IND",
@@ -82162,7 +82162,7 @@
 			"iso_code": "IND",
 			"country": "India",
 			"year": 2007,
-			"primary_energy_consumption": "5258.09"
+			"primary_energy_consumption": "5.258.090"
 		},
 		{
 			"iso_code": "IND",
@@ -82174,7 +82174,7 @@
 			"iso_code": "IND",
 			"country": "India",
 			"year": 2009,
-			"primary_energy_consumption": "5978.99"
+			"primary_energy_consumption": "5.978.990"
 		},
 		{
 			"iso_code": "IND",
@@ -82204,19 +82204,19 @@
 			"iso_code": "IND",
 			"country": "India",
 			"year": 2014,
-			"primary_energy_consumption": "7739.36"
+			"primary_energy_consumption": "7.739.360"
 		},
 		{
 			"iso_code": "IND",
 			"country": "India",
 			"year": 2015,
-			"primary_energy_consumption": "7991.9"
+			"primary_energy_consumption": "7.991.900"
 		},
 		{
 			"iso_code": "IND",
 			"country": "India",
 			"year": 2016,
-			"primary_energy_consumption": "8352.07"
+			"primary_energy_consumption": "8.352.070"
 		},
 		{
 			"iso_code": "IND",
@@ -83452,7 +83452,7 @@
 			"iso_code": "IRN",
 			"country": "Iran",
 			"year": 1981,
-			"primary_energy_consumption": "408.51"
+			"primary_energy_consumption": "408.510"
 		},
 		{
 			"iso_code": "IRN",
@@ -83482,7 +83482,7 @@
 			"iso_code": "IRN",
 			"country": "Iran",
 			"year": 1986,
-			"primary_energy_consumption": "604.4"
+			"primary_energy_consumption": "604.400"
 		},
 		{
 			"iso_code": "IRN",
@@ -83524,7 +83524,7 @@
 			"iso_code": "IRN",
 			"country": "Iran",
 			"year": 1993,
-			"primary_energy_consumption": "926.94"
+			"primary_energy_consumption": "926.940"
 		},
 		{
 			"iso_code": "IRN",
@@ -83578,7 +83578,7 @@
 			"iso_code": "IRN",
 			"country": "Iran",
 			"year": 2002,
-			"primary_energy_consumption": "1640.41"
+			"primary_energy_consumption": "1.640.410"
 		},
 		{
 			"iso_code": "IRN",
@@ -83638,7 +83638,7 @@
 			"iso_code": "IRN",
 			"country": "Iran",
 			"year": 2012,
-			"primary_energy_consumption": "2614.01"
+			"primary_energy_consumption": "2.614.010"
 		},
 		{
 			"iso_code": "IRN",
@@ -86266,7 +86266,7 @@
 			"iso_code": "ITA",
 			"country": "Italy",
 			"year": 1968,
-			"primary_energy_consumption": "1171.64"
+			"primary_energy_consumption": "1.171.640"
 		},
 		{
 			"iso_code": "ITA",
@@ -86362,7 +86362,7 @@
 			"iso_code": "ITA",
 			"country": "Italy",
 			"year": 1984,
-			"primary_energy_consumption": "1636.11"
+			"primary_energy_consumption": "1.636.110"
 		},
 		{
 			"iso_code": "ITA",
@@ -86380,7 +86380,7 @@
 			"iso_code": "ITA",
 			"country": "Italy",
 			"year": 1987,
-			"primary_energy_consumption": "1724.95"
+			"primary_energy_consumption": "1.724.950"
 		},
 		{
 			"iso_code": "ITA",
@@ -86494,7 +86494,7 @@
 			"iso_code": "ITA",
 			"country": "Italy",
 			"year": 2006,
-			"primary_energy_consumption": "2174.14"
+			"primary_energy_consumption": "2.174.140"
 		},
 		{
 			"iso_code": "ITA",
@@ -118480,7 +118480,7 @@
 			"iso_code": "RUS",
 			"country": "Russia",
 			"year": 2000,
-			"primary_energy_consumption": "7176.87"
+			"primary_energy_consumption": "7.176.870"
 		},
 		{
 			"iso_code": "RUS",
@@ -118558,7 +118558,7 @@
 			"iso_code": "RUS",
 			"country": "Russia",
 			"year": 2013,
-			"primary_energy_consumption": "7946.53"
+			"primary_energy_consumption": "7.946.530"
 		},
 		{
 			"iso_code": "RUS",
@@ -120526,7 +120526,7 @@
 			"iso_code": "SAU",
 			"country": "Saudi Arabia",
 			"year": 1965,
-			"primary_energy_consumption": "235.14"
+			"primary_energy_consumption": "235.140"
 		},
 		{
 			"iso_code": "SAU",
@@ -120676,7 +120676,7 @@
 			"iso_code": "SAU",
 			"country": "Saudi Arabia",
 			"year": 1990,
-			"primary_energy_consumption": "928.35"
+			"primary_energy_consumption": "928.350"
 		},
 		{
 			"iso_code": "SAU",
@@ -120688,7 +120688,7 @@
 			"iso_code": "SAU",
 			"country": "Saudi Arabia",
 			"year": 1992,
-			"primary_energy_consumption": "981.77"
+			"primary_energy_consumption": "981.770"
 		},
 		{
 			"iso_code": "SAU",
@@ -120790,7 +120790,7 @@
 			"iso_code": "SAU",
 			"country": "Saudi Arabia",
 			"year": 2009,
-			"primary_energy_consumption": "2259.36"
+			"primary_energy_consumption": "2.259.360"
 		},
 		{
 			"iso_code": "SAU",
@@ -120802,7 +120802,7 @@
 			"iso_code": "SAU",
 			"country": "Saudi Arabia",
 			"year": 2011,
-			"primary_energy_consumption": "2556.74"
+			"primary_energy_consumption": "2.556.740"
 		},
 		{
 			"iso_code": "SAU",
@@ -136168,13 +136168,13 @@
 			"iso_code": "USA",
 			"country": "United States",
 			"year": 1966,
-			"primary_energy_consumption": "15384.19"
+			"primary_energy_consumption": "15.384.190"
 		},
 		{
 			"iso_code": "USA",
 			"country": "United States",
 			"year": 1967,
-			"primary_energy_consumption": "15919.95"
+			"primary_energy_consumption": "15.919.950"
 		},
 		{
 			"iso_code": "USA",
@@ -136258,7 +136258,7 @@
 			"iso_code": "USA",
 			"country": "United States",
 			"year": 1981,
-			"primary_energy_consumption": "20109.83"
+			"primary_energy_consumption": "20.109.830"
 		},
 		{
 			"iso_code": "USA",
@@ -136306,7 +136306,7 @@
 			"iso_code": "USA",
 			"country": "United States",
 			"year": 1989,
-			"primary_energy_consumption": "22447.29"
+			"primary_energy_consumption": "22.447.290"
 		},
 		{
 			"iso_code": "USA",
@@ -136354,7 +136354,7 @@
 			"iso_code": "USA",
 			"country": "United States",
 			"year": 1997,
-			"primary_energy_consumption": "25225.64"
+			"primary_energy_consumption": "25.225.640"
 		},
 		{
 			"iso_code": "USA",
@@ -136432,7 +136432,7 @@
 			"iso_code": "USA",
 			"country": "United States",
 			"year": 2010,
-			"primary_energy_consumption": "25825.74"
+			"primary_energy_consumption": "25.825.740"
 		},
 		{
 			"iso_code": "USA",
@@ -136468,7 +136468,7 @@
 			"iso_code": "USA",
 			"country": "United States",
 			"year": 2016,
-			"primary_energy_consumption": "25560.52"
+			"primary_energy_consumption": "25.560.520"
 		},
 		{
 			"iso_code": "USA",
